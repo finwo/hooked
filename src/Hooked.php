@@ -76,9 +76,9 @@ abstract class Hooked
         foreach ($this->hooks[$name] as $hook) {
 
             // Call the hook
-            if (!$invoker->call($hook, array(
+            if (!$invoker->call($hook, array_merge(array(
                 'event' => $event
-            ))) {
+            ), $event->get('param')))) {
                 // Break propegation if asked to
                 break;
             }
