@@ -26,10 +26,10 @@ class Event
      * @param string $name
      * @param array $parameters
      */
-    public function __construct($name = '', $parameters = array())
+    public function __construct($name = '', &$parameters = array())
     {
         $this->name  = $name;
-        $this->param = $parameters;
+        $this->param = &$parameters;
     }
 
     /**
