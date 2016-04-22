@@ -22,6 +22,17 @@ class Event
     private $accessor;
 
     /**
+     * Event constructor.
+     * @param string $name
+     * @param array $parameters
+     */
+    public function __construct($name = '', $parameters = array())
+    {
+        $this->name  = $name;
+        $this->param = $parameters;
+    }
+
+    /**
      * @return PropertyAccessor
      */
     private function getAccessor()
