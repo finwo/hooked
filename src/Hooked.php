@@ -78,7 +78,7 @@ abstract class Hooked
             // Call the hook
             if (!$invoker->call($hook, array_merge(array(
                 'event' => $event
-            ), $event->get('param')))) {
+            )))) {
                 // Break propegation if asked to
                 break;
             }
