@@ -60,11 +60,11 @@ class Event
         return $accessor->get($this, $key, '.');
     }
 
-    public function set($key, $value)
+    public function set($key, &$value)
     {
         // Try directly, might be the quickest way
         if (isset($this->{$key})) {
-            $this->{$key} = $value;
+            $this->{$key} = &$value;
             return $this;
         }
 
